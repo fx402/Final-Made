@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
-    private val waktu_loading = 4000L
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
@@ -17,6 +16,10 @@ class SplashScreenActivity : AppCompatActivity() {
             val home = Intent(this, MainActivity::class.java)
             startActivity(home)
             finish()
-        }, waktu_loading)
+        }, Companion.waktu_loading)
+    }
+
+    companion object {
+        private const val waktu_loading = 4000L
     }
 }
